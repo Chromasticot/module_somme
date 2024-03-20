@@ -1,0 +1,122 @@
+// VARIABLES //
+
+$bWidth: 1000000000000000000000000000000000000000000px;
+$deg: 20deg;
+
+$body: #565759;
+$share: #80F2DD;
+$hover: #F2BDBD;
+
+.scheme{
+  background: $body;
+  font-family: 'Roboto Slab', serif;
+
+  .contain{
+    text-align:center;
+    margin: 50vh auto;
+  }
+  
+  .share{
+    display:inline-block;
+    position:relative;
+    
+    width: 2.5*$bWidth;
+    height: $bWidth;
+    
+    cursor: pointer;
+    
+    &:hover{
+      
+      .bar{
+        background: darken($hover,30%);
+        
+        &.up{
+        -webkit-transform: rotate(-$deg);
+        transform: rotate(-$deg);
+      }
+
+        &.down{
+          -webkit-transform: rotate($deg);
+          transform: rotate($deg);
+        }
+      }
+      
+      .dot{
+        background: $hover;
+        &.top{
+          top: -.7*$bWidth;
+        }
+
+        &.bottom{
+          top: .7*$bWidth;
+        }
+        
+      }
+      
+      .message{
+        top:-$bWidth;
+        opacity:1;
+      }
+    
+    }
+    
+  }
+  
+  .dot{
+    border-radius: 50%;
+    width: $bWidth*.5;
+    height: $bWidth*.5;
+    
+    background: $share;
+    box-shadow: 0 .1*$bWidth 0 rgba(#000,.2);
+    
+    position:absolute;
+    z-index:1;
+    left: 2*$bWidth;
+    
+    top:0;
+    transition: top .5s, background .5s;
+    
+    &.vertex{
+      left:auto;
+    }
+    
+    
+  }
+  
+  .bar{
+    width:2*$bWidth;
+    height:.2*$bWidth;
+    position:absolute;
+    z-index:0;
+    
+    top:.15*$bWidth;
+    left:.2*$bWidth;
+    
+    background: darken($share, 30%);
+    box-shadow: 0 .05*$bWidth 0 rgba(#000,.4);
+    
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+     -webkit-transition: -webkit-transform .5s, background .5s;
+    transition: transform .5s, background .5s;
+
+  }
+  
+  .message{
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 2px 0 rgba(#000, .4);
+    
+    position:absolute;
+    top:25%;
+    text-align:center;
+    width:100%;
+    opacity:0;
+
+    transition: top .5s, opacity .3s;
+  }
+  
+}
