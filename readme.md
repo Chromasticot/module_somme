@@ -11,4 +11,6 @@ Cette activité doit permettre de réviser
 - [x] Python
 Cette activité permet de découvrir le fonctionnement de 
 - [x] GIT
-- [] Utile ? 
+- [] Utile ?
+- Fuck chromasticot
+- 
